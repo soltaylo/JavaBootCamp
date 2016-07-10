@@ -1,0 +1,391 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+{\*\generator Riched20 10.0.10586}\viewkind4\uc1 
+\pard\f0\fs22\lang1033 /*\par
+ * To change this license header, choose License Headers in Project Properties.\par
+ * To change this template file, choose Tools | Templates\par
+ * and open the template in the editor.\par
+ */\par
+package whatdayisit;\par
+//activate the user input capabilities\par
+import java.util.Scanner;\par
+/**\par
+ *\par
+ * @author SOLTAYLO\par
+ */\par
+public class WhatDayIsIt \{\par
+\par
+    /**\par
+     * @param args the command line arguments\par
+     */\par
+    public static void main(String[] args) \{\par
+        //initiate new scanner utility to allow for user input\par
+        Scanner userInputScanner = new Scanner(System.in);\par
+        \par
+        \par
+        //the variable that represents the day of the week value\par
+        int wkDay = 0;\par
+        //represent Y, Y/4, Y/100, Y/400 for Zeller's Congruence Algorithm\par
+        //respectively\par
+        int a, b, c, d;\par
+        //represent monthVal, & dayVal respectively\par
+        int m, n;\par
+        //represent 13(m+1)/5\par
+        int x, y, z;\par
+        String decisionVal;\par
+//       String decisionVal = userInputScanner.next();\par
+        char userDec;\par
+//      char userDec = decisionVal.charAt(0);\par
+        //converts user string into a character variable\par
+        int progDec = 0;\par
+        //will be used to determine if the program should continue\par
+        //running or if it will quit\par
+        \par
+        do\{\par
+            \par
+            //ask the user to input the month of the year\par
+        System.out.println("Please enter the month");\par
+        int monthVal = userInputScanner.nextInt();\par
+        \par
+        //ask the user to input the day of the month\par
+        System.out.println("Please enter the day of the month");\par
+        int dayVal = userInputScanner.nextInt();\par
+        \par
+        //ask the user to input the 1year\par
+        System.out.println("Please enter the year");\par
+        int yearVal = userInputScanner.nextInt();\par
+            \par
+            switch(monthVal)\{\par
+                case 1:\par
+                    a = yearVal - 1;\par
+                    b = (yearVal - 1)/4;\par
+                    c = 6 * (yearVal)/100;\par
+                    d = (yearVal - 1)/400;\par
+                    m = monthVal + 12;\par
+                    n = dayVal;\par
+                    x = m + 1;\par
+                    y = 13 * x;        \par
+                    z = y /5;\par
+                    \par
+                    //checks to see if an appropriate day value has been checked\par
+                    if (n>31 || n<1)\{\par
+                        System.out.println("Error - Please Enter a month value "\par
+                                + "between 1 - 31, and try again.");\par
+                        progDec = 0;\par
+                        break;\par
+                    \}\par
+                    \par
+                    wkDay = (n + z + a + b + c + d)%7;\par
+                    break;\par
+                case 2:\par
+                    a = yearVal - 1;\par
+                    b = (yearVal - 1)/4;\par
+                    c = 6 * (yearVal)/100;\par
+                    d = (yearVal - 1)/400;\par
+                    m = monthVal + 12;\par
+                    n = dayVal;\par
+                    x = m + 1;\par
+                    y = 13 * x;        \par
+                    z = y /5;\par
+                    \par
+                    //checks to see if an appropriate day value has been checked\par
+                    if (n>29 || n<1)\{\par
+                        System.out.println("Error - Please Enter a month value "\par
+                                + "between 1 - 31, and try again.");\par
+                        progDec = 0;\par
+                        break;\par
+                    \}\par
+                    \par
+                    wkDay = (n + z + a + b + c + d)%7;\par
+                    break;\par
+                case 3:\par
+                    a = yearVal;\par
+                    b = (yearVal)/4;\par
+                    c = 6 * (yearVal)/100;\par
+                    d = (yearVal)/400;\par
+                    m = monthVal;\par
+                    n = dayVal;\par
+                    x = m + 1;\par
+                    y = 13 * x;        \par
+                    z = y /5;\par
+                    \par
+                    //checks to see if an appropriate day value has been checked\par
+                    if (n>31 || n<1)\{\par
+                        System.out.println("Error - Please Enter a month value "\par
+                                + "between 1 - 31, and try again.");\par
+                        progDec = 0;\par
+                        break;\par
+                    \}\par
+                    \par
+                    wkDay = (n + z + a + b + c + d)%7;\par
+                    break;\par
+                case 4:\par
+                    a = yearVal;\par
+                    b = (yearVal)/4;\par
+                    c = 6 * (yearVal)/100;\par
+                    d = (yearVal)/400;\par
+                    m = monthVal;\par
+                    n = dayVal;\par
+                    x = m + 1;\par
+                    y = 13 * x;        \par
+                    z = y /5;\par
+                    \par
+                    //checks to see if an appropriate day value has been checked\par
+                    if (n>30 || n<1)\{\par
+                        System.out.println("Error - Please Enter a month value "\par
+                                + "between 1 - 31, and try again.");\par
+                        progDec = 0;\par
+                        break;\par
+                    \}\par
+                    \par
+                    wkDay = (n + z + a + b + c + d)%7;\par
+                    break;\par
+                case 5:\par
+                    a = yearVal;\par
+                    b = (yearVal)/4;\par
+                    c = 6 * (yearVal)/100;\par
+                    d = (yearVal)/400;\par
+                    m = monthVal;\par
+                    n = dayVal;\par
+                    x = m + 1;\par
+                    y = 13 * x;        \par
+                    z = y /5;\par
+                    \par
+                    //checks to see if an appropriate day value has been checked\par
+                    if (n>31 || n<1)\{\par
+                        System.out.println("Error - Please Enter a month value "\par
+                                + "between 1 - 31, and try again.");\par
+                        progDec = 0;\par
+                        break;\par
+                    \}\par
+                    \par
+                    wkDay = (n + z + a + b + c + d)%7;\par
+                    break;\par
+                case 6:\par
+                    a = yearVal;\par
+                    b = (yearVal)/4;\par
+                    c = 6 * (yearVal)/100;\par
+                    d = (yearVal)/400;\par
+                    m = monthVal;\par
+                    n = dayVal;\par
+                    x = m + 1;\par
+                    y = 13 * x;        \par
+                    z = y /5;\par
+                    \par
+                    //checks to see if an appropriate day value has been checked\par
+                    if (n>30 || n<1)\{\par
+                        System.out.println("Error - Please Enter a month value "\par
+                                + "between 1 - 31, and try again.");\par
+                        progDec = 0;\par
+                        break;\par
+                    \}\par
+                    \par
+                    wkDay = (n + z + a + b + c + d)%7;\par
+                    break;\par
+                case 7:\par
+                    a = yearVal;\par
+                    b = (yearVal)/4;\par
+                    c = 6 * (yearVal)/100;\par
+                    d = (yearVal)/400;\par
+                    m = monthVal;\par
+                    n = dayVal;\par
+                    x = m + 1;\par
+                    y = 13 * x;        \par
+                    z = y /5;\par
+                    \par
+                    //checks to see if an appropriate day value has been checked\par
+                    if (n>31 || n<1)\{\par
+                        System.out.println("Error - Please Enter a month value "\par
+                                + "between 1 - 31, and try again.");\par
+                        progDec = 0;\par
+                        break;\par
+                    \}\par
+                    \par
+                    wkDay = (n + z + a + b + c + d)%7;\par
+                    break;\par
+                case 8:\par
+                    a = yearVal;\par
+                    b = (yearVal)/4;\par
+                    c = 6 * (yearVal)/100;\par
+                    d = (yearVal)/400;\par
+                    m = monthVal;\par
+                    n = dayVal;\par
+                    x = m + 1;\par
+                    y = 13 * x;        \par
+                    z = y /5;\par
+                    \par
+                    //checks to see if an appropriate day value has been checked\par
+                    if (n>31 || n<1)\{\par
+                        System.out.println("Error - Please Enter a month value "\par
+                                + "between 1 - 31, and try again.");\par
+                        progDec = 0;\par
+                        break;\par
+                    \}\par
+                    \par
+                    wkDay = (n + z + a + b + c + d)%7;\par
+                    break;\par
+                case 9:\par
+                    a = yearVal;\par
+                    b = (yearVal)/4;\par
+                    c = 6 * (yearVal)/100;\par
+                    d = (yearVal)/400;\par
+                    m = monthVal;\par
+                    n = dayVal;\par
+                    x = m + 1;\par
+                    y = 13 * x;        \par
+                    z = y /5;\par
+                    \par
+                    //checks to see if an appropriate day value has been checked\par
+                    if (n>30 || n<1)\{\par
+                        System.out.println("Error - Please Enter a month value "\par
+                                + "between 1 - 31, and try again.");\par
+                        progDec = 0;\par
+                        break;\par
+                    \}\par
+                    \par
+                    wkDay = (n + z + a + b + c + d)%7;\par
+                    break;\par
+                case 10:\par
+                    a = yearVal;\par
+                    b = (yearVal)/4;\par
+                    c = 6 * (yearVal)/100;\par
+                    d = (yearVal)/400;\par
+                    m = monthVal;\par
+                    n = dayVal;\par
+                    x = m + 1;\par
+                    y = 13 * x;        \par
+                    z = y /5;\par
+                    \par
+                    //checks to see if an appropriate day value has been checked\par
+                    if (n>31 || n<1)\{\par
+                        System.out.println("Error - Please Enter a month value "\par
+                                + "between 1 - 31, and try again.");\par
+                        progDec = 0;\par
+                        break;\par
+                    \}\par
+                    \par
+                    wkDay = (n + z + a + b + c + d)%7;\par
+                    break;\par
+                case 11:\par
+                    a = yearVal;\par
+                    b = (yearVal)/4;\par
+                    c = 6 * (yearVal)/100;\par
+                    d = (yearVal)/400;\par
+                    m = monthVal;\par
+                    n = dayVal;\par
+                    x = m + 1;\par
+                    y = 13 * x;        \par
+                    z = y /5;\par
+                    \par
+                    //checks to see if an appropriate day value has been checked\par
+                    if (n>30 || n<1)\{\par
+                        System.out.println("Error - Please Enter a month value "\par
+                                + "between 1 - 31, and try again.");\par
+                        progDec = 0;\par
+                        break;\par
+                    \}\par
+                    \par
+                    wkDay = (n + z + a + b + c + d)%7;\par
+                    break;\par
+                case 12:\par
+                    a = yearVal;\par
+                    b = (yearVal)/4;\par
+                    c = 6 * (yearVal)/100;\par
+                    d = (yearVal)/400;\par
+                    m = monthVal;\par
+                    n = dayVal;\par
+                    x = m + 1;\par
+                    y = 13 * x;        \par
+                    z = y /5;\par
+                    \par
+                    //checks to see if an appropriate day value has been checked\par
+                    if (n>31 || n<1)\{\par
+                        System.out.println("Error - Please Enter a month value "\par
+                                + "between 1 - 31, and try again.");\par
+                        progDec = 0;\par
+                        break;\par
+                    \}\par
+                    \par
+                    wkDay = (n + z + a + b + c + d)%7;\par
+                    break;\par
+                default:\par
+                   \par
+                        System.out.println("Error - One or more inputs can't be "\par
+                                + "processed, please correct, and try again.");\par
+                        progDec = 0;\par
+                        break; \par
+            \}\par
+            \par
+            switch(wkDay)\{\par
+                case 0:\par
+                //Saturday    \par
+                    System.out.println("You entered " + monthVal + "/" \par
+                            + dayVal + "/" + yearVal + " - Saturday");\par
+                    \par
+                    break;\par
+                case 1:\par
+                //Sunday    \par
+                    System.out.println("You entered " + monthVal + "/" \par
+                            + dayVal + "/" + yearVal + " - Sunday");\par
+                    \par
+                    break;\par
+                case 2:\par
+                //Monday    \par
+                    System.out.println("You entered " + monthVal + "/" \par
+                            + dayVal + "/" + yearVal + " - Monday");\par
+                    \par
+                    break;\par
+                case 3:\par
+                //Tuesday   \par
+                    System.out.println("You entered " + monthVal + "/" \par
+                            + dayVal + "/" + yearVal + " - Tuesday");\par
+                    \par
+                    break;\par
+                case 4:\par
+                //Wednesday    \par
+                    System.out.println("You entered " + monthVal + "/" \par
+                            + dayVal + "/" + yearVal + " - Wednesday");\par
+            \par
+                    break;\par
+                case 5:\par
+                //Thursday    \par
+                    System.out.println("You entered " + monthVal + "/" \par
+                            + dayVal + "/" + yearVal + " - Thursday");\par
+            \par
+                    break;\par
+                case 6:\par
+                //Friday    \par
+                    System.out.println("You entered " + monthVal + "/" \par
+                            + dayVal + "/" + yearVal + " - Friday");\par
+            \par
+                    break;\par
+                default:\par
+                //Code Malfunction    \par
+                    System.out.println("Something with your code is not correct"\par
+                            + " please fix your code and try again");\par
+                    progDec = 0;\par
+                    break;\par
+                    \par
+            \}\par
+            \par
+            //ask the user if they would like to quit\par
+            System.out.println("Would you like to enter a new date? [y/n]");\par
+            decisionVal = userInputScanner.next();\par
+            userDec = decisionVal.charAt(0);\par
+            //this switch statement is to determine if the user wishes\par
+            //to enter a new date to determine what day it falls on\par
+            switch (userDec)\{\par
+                case 'y':\par
+                    progDec = 1;\par
+                    break;\par
+                case 'n':\par
+                    System.out.println("Goodbye!");\par
+                    progDec = 0;\par
+                    break;\par
+            \}\par
+        \}\par
+        while (progDec == 1);\par
+        \par
+    \}\par
+\}\par
+}
+ 
